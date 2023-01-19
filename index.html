@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random String Generator</title>
+    <style>
+      button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-top: 20px;
+      }
+
+      .output {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random String Generator</h1>
+    <button onclick="generate()">Generate</button>
+    <div id="output" class="output"></div>
+
+    <script>
+      function generate() {
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var string1 = "";
+        var string2 = "";
+        for (var i = 0; i < 16; i++) {
+          string1 += possible.charAt(Math.floor(Math.random() * possible.length));
+          string2 += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        document.getElementById("output").innerHTML = "String 1: " + string1 + "<br>" + "String 2: " + string2;
+      }
+    </script>
+  </body>
+</html>
